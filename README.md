@@ -3,7 +3,7 @@
 This project demonstrates:
 
 - Dynamic Java Pattern Program
-- Right Triangle Pattern
+- Right Triangle Pattern UI/UX
 - Full Pyramid Pattern
 - Docker Containerization
 - Jenkins CI/CD Pipeline

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Pattern Generator</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: linear-gradient(to right, #667eea, #764ba2);
+            color: white;
+            text-align: center;
+            padding-top: 80px;
+        }
+
+        .box {
+            background: white;
+            color: black;
+            padding: 25px;
+            width: 320px;
+            margin: auto;
+            border-radius: 12px;
+            box-shadow: 0px 0px 15px rgba(0,0,0,0.3);
+        }
+
+        input, button {
+            width: 90%;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        button {
+            background: #667eea;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #5a67d8;
+        }
+
+        pre {
+            text-align: left;
+            background: black;
+            color: #00ffcc;
+            padding: 10px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+    <h2>Pattern Generator</h2>
+
+    <input type="text" id="symbol" placeholder="Enter Symbol">
+    <input type="number" id="rows" placeholder="Enter Rows">
+
+    <button onclick="generatePattern()">Generate</button>
+
+    <h3>Output:</h3>
+    <pre id="output"></pre>
+</div>
+
+<script>
+function generatePattern() {
+
+    let symbol = document.getElementById("symbol").value;
+    let rows = document.getElementById("rows").value;
+
+    let result = "";
+
+    // Right Triangle
+    result += "Right Triangle Pattern:\n\n";
+    for (let i = 1; i <= rows; i++) {
+        for (let j = 1; j <= i; j++) {
+            result += symbol + " ";
+        }
+        result += "\n";
+    }
+
+    // Full Pyramid
+    result += "\nFull Pyramid Pattern:\n\n";
+    for (let i = 1; i <= rows; i++) {
+
+        for (let j = i; j < rows; j++) {
+            result += " ";
+        }
+
+        for (let k = 1; k <= (2 * i - 1); k++) {
+            result += symbol;
+        }
+
+        result += "\n";
+    }
+
+    document.getElementById("output").textContent = result;
+}
+</script>
+
+</body>
+</html>
